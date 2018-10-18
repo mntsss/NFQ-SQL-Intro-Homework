@@ -1,0 +1,3 @@
+SELECT `name`, COUNT(`books`.`authorId`) AS 'books' FROM `authors` INNER JOIN `books` ON `authors`.`authorId` = `books`.`authorId` GROUP BY `authors`.`authorId`; 
+SELECT `name`, COUNT(`books`.`authorId`) AS 'books' FROM `authors` LEFT JOIN `books` ON `authors`.`authorId` = `books`.`authorId` GROUP BY `authors`.`authorId`; 
+DELETE `authors` FROM `authors` LEFT JOIN `books` ON `authors`.`authorId` = `books`.`authorId` WHERE `bookId` IS NULL;
